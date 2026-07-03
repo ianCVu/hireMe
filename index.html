@@ -6,6 +6,7 @@
   <body>
     <canvas id="tamer"></canvas>
     <div id="resume">
+      <button id="profile">My Github Profile</button>
       <h3>Hire Me to help with your Website!</h3>
       <h5>
         I specialize in static languages like JavaScript, HTML, and CSS! Please hire me! I'm free!
@@ -19,5 +20,28 @@
         I HATE ROBLOX BRAINROTS AN ALL!!! 6 7 RUINED MY LIFE, WHENEVER SOMEONE ASKED ME WHAT TIME TO DO WHAT I'D SAY "Around 6 or 7 PM" and they'd ask: "Really?" BRAINROTS ARE SOOOOO BAD TOO, SOOOO CHEESY!
       </h5>
     </div>
+    <script type="importmap">
+      {
+        "imports" : {
+          "three" : "https://unpkg.com/three@0.141.0/build/three.module.js"
+        }
+      }
+    </script>
+    <script type="module">
+      import * as THREE from 'three';
+      const renderer = new THREE.WebGLRenderer(
+        {
+          "canvas" : document.getElementById('canvas')
+        }
+      );
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.001, 1000);
+      const light = new THREE.AmbientLight("white", 1);
+      const textureLoader = new THREE.TextureLoader();
+
+      
+      
+      renderer.render(scene, camera);
+    </script>
   </body>
 </html>
