@@ -31,7 +31,7 @@
       import * as THREE from 'three';
       const renderer = new THREE.WebGLRenderer(
         {
-          "canvas" : document.getElementById('canvas')
+          "canvas" : document.getElementById('tamer')
         }
       );
       const scene = new THREE.Scene();
@@ -61,6 +61,7 @@
         requestAnimationFrame(rotateBlock);
         block.rotateY(0.001);
         block.rotateX(0.001);
+        renderer.render(scene, camera);
       }
       rotateBlock();
     </script>
