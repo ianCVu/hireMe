@@ -39,9 +39,30 @@
       const light = new THREE.AmbientLight("white", 1);
       const textureLoader = new THREE.TextureLoader();
 
-      
-      
+      let texture = textureLoader.load('./3dtextures/buffdoge.png');
+      const block = new THREE.Mesh(
+        new THREE.BoxGeometry(1, 1, 1),
+        new THREE.MeshStandardMaterial({ map : texture })
+      );
+      block.position.set(0, 0, 0);
+      scene.add(block);
+
+      let carpetTexture = textureLoader.load('./3dtextures/carpet.jpg');
+      const carpet = new THREE.Mesh(
+        new THREE.BoxGeometry(50, 1 50),
+        new THREE.MeshStandardMaterial({ map : carpetTexture })
+      );
+      carpet.position.set(0, -2, 1);
+      scene.add(carpet);
+
+      renderer.setSize(window.innerWidth, window.innerHeight);
       renderer.render(scene, camera);
+      function rotateBlock() {
+        requestAnimationFrame(rotateBlock);
+        block.rotateY(0.001);
+        block.rotateX(0.001);
+      }
+      rotateBlock();
     </script>
   </body>
 </html>
