@@ -44,12 +44,12 @@
         new THREE.BoxGeometry(1, 1, 1),
         new THREE.MeshStandardMaterial({ map : texture })
       );
-      block.position.set(0, 0, 0);
+      block.position.set(0, 0, 5);
       scene.add(block);
 
       let carpetTexture = textureLoader.load('./3dtextures/carpet.jpg');
       const carpet = new THREE.Mesh(
-        new THREE.BoxGeometry(50, 1 50),
+        new THREE.BoxGeometry(50, 1, 50),
         new THREE.MeshStandardMaterial({ map : carpetTexture })
       );
       carpet.position.set(0, -2, 1);
